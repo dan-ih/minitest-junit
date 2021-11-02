@@ -38,7 +38,7 @@ module Minitest
           else
             result.failures.each do |failure|
               type = classify failure
-              xml.tag! type, format_backtrace(failure), message: result
+              xml.tag! type, result, message: format_backtrace(failure)
             end
           end
         end
